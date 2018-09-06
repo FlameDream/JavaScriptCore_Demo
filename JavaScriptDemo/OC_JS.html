@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>JSExport</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+
+<style type="text/css" media="screen">
+	
+</style>
+</head>
+<body>
+
+	
+	
+	<p style="font-size: 20px;margin-left: 20px;margin-top: 40px;color: blue">在加载UIWebView的过程中，OC调用JS的情况在加载成功之后，OC进行传值，JS通过对传来的值进行验证。</p>
+	<div id="test">
+		
+	</div>
+	
+
+<script type="text/javascript">
+
+	
+	// 无参数-无返回值的JS方法
+	function oc_js_NOParameters(){
+
+		alert("无参数-无返回值");
+		var par = document.createElement("p");
+		par.innerHTML = "OC_JS显示无参数-无返回值";
+
+		var div = document.getElementById('test');
+		div.appendChild(par);
+
+	}
+
+	
+	//  有参数
+	function oc_js_ParametersAndReturn(name){
+
+		alert("有参数-有返回值");
+		var par = document.createElement("p");
+		par.value = "显示无参数-无返回值";
+
+		var div = document.getElementById('test');
+		div.appendChild(par);
+
+		// var dic = {c:4, a:2, d:3, b:1};
+
+		if (name == 'Jack') {
+			var dic = {c:4, a:2, d:3, b:1,jack:99999};
+
+			return dic;
+
+		}
+
+		var dic = {c:4, a:2, d:3, b:1};
+		return dic;
+	}
+	
+	
+</script>
+    
+</body>
+</html>

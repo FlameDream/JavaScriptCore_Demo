@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>JSExport</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+
+<style type="text/css" media="screen">
+	p {
+		font-size: 20px;
+		color: blue;
+		
+		border-style: solid;
+		border-width: 2px;
+		border-color: rgba(0,0,0,0.5);
+
+		height: 30px;
+		text-align: center;
+
+		line-height: 30px;
+
+		margin: 20px 30px 20px 30px;
+	}
+</style>
+</head>
+<body>	
+	<p onclick="JS_OC('1')">JS调用OC=>无参数-无返回值</p>
+	<p onclick="JS_OC('2')">JS调用OC=>无参数-有返回值</p>
+	
+	输入JS调用OC的参数:
+	<input type="text" id="JS_OC" style="border-style: solid;border-width: 1;border-color: black">
+	<p onclick="JS_OC('3')">JS调用OC=>有参数-无返回值</p>
+	<p onclick="JS_OC('4')">JS调用OC=>有参数-有返回值</p>
+
+<script type="text/javascript">
+	
+	function JS_OC(tyep){
+		var input = document.getElementById('JS_OC').value;
+		switch (tyep) {
+			case '1':
+				{
+					// JS调用OC=>无参数-无返回值
+					js_oc_NOParameters();
+					console.log(tyep);
+				}
+				// statements_1
+				break;
+			case '2':
+				{
+					// JS调用OC=>无参数-有返回值
+					var returnContent = js_oc_NOParameters_return();
+					alert(returnContent);
+					console.log(tyep);
+				}
+				break;
+			case '3':
+				{
+					// JS调用OC=>有参数-无返回值
+					js_oc_haveParameters(input);
+					console.log(tyep);
+				}
+				break;
+			case '4':
+				{
+					// JS调用OC=>有参数-有返回值
+					var returnContent = js_oc_haveParameters_return(input);
+					console.log(tyep);
+					alert(returnContent);
+				}
+				break;
+			default:
+				console.log('出现异常');
+				// statements_def
+				break;
+		}
+
+		
+	}
+	
+	
+</script>
+    
+</body>
+</html>
